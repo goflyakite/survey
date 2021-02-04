@@ -12,6 +12,20 @@
                     "type": "name"
                 }
             ]
+        },
+        {
+            "name": "survey_record",
+            "base": "",
+            "fields": [
+                {
+                    "name": "subject",
+                    "type": "name"
+                },
+                {
+                    "name": "timestamp",
+                    "type": "time_point"
+                }
+            ]
         }
     ],
     "actions": [
@@ -21,7 +35,15 @@
             "ricardian_contract": ""
         }
     ],
-    "tables": [],
+    "tables": [
+        {
+            "name": "survey",
+            "type": "survey_record",
+            "index_type": "i64",
+            "key_names": [],
+            "key_types": []
+        }
+    ],
     "ricardian_clauses": [],
     "variants": []
 }
