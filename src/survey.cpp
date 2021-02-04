@@ -35,6 +35,16 @@ CONTRACT survey : public contract {
         }
     };
 
+    ACTION deletedata() {
+        require_auth( get_self() );
+        survey_index survey(get_self(), get_self().value );
+
+        auto itr = survey.begin();
+        while( itr  != survey.end() ) {
+            itr = survey.erase( itr );
+        }
+    }
+
   private:
     //struct [[eosio::table]] survey_record {
     // FYI: the above line is the same as the below line. Pick one.

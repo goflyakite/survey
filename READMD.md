@@ -15,5 +15,6 @@ Good milestones.
 
 * cb40468 - Initial commit, working hello.
 * 4c053d9 - Working eosio table.
-* Latest! - Working emplace or modify table.
+* 7ee8d50 - Working emplace or modify table.
+* Latest! - Deleteall functionality working.
 

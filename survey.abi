@@ -4,6 +4,11 @@
     "types": [],
     "structs": [
         {
+            "name": "deletedata",
+            "base": "",
+            "fields": []
+        },
+        {
             "name": "hi",
             "base": "",
             "fields": [
@@ -29,6 +34,11 @@
         }
     ],
     "actions": [
+        {
+            "name": "deletedata",
+            "type": "deletedata",
+            "ricardian_contract": ""
+        },
         {
             "name": "hi",
             "type": "hi",
