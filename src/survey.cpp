@@ -18,11 +18,21 @@ CONTRACT survey : public contract {
 
         survey_index survey(get_self(), get_self().value );
         //                  ^Code       ^Scope
-        //              vPayer       v Lamba fn
-        survey.emplace( get_self(), [&]( auto& new_row) {
-          new_row.subject = user;
-          new_row.timestamp = current_time_point();
-        });
+
+        auto itr = survey.find( user.value );
+        if ( itr == survey.end() ) {
+            //              vPayer       v Lamba fn
+            survey.emplace( get_self(), [&]( auto& new_row) {
+            new_row.subject = user;
+            new_row.timestamp = current_time_point();
+            });
+        } else {
+            //             vRow vPayer       v Lamba fn
+            survey.modify( itr, get_self(), [&]( auto& this_row) {
+            this_row.subject = user;
+            this_row.timestamp = current_time_point();
+            });            
+        }
     };
 
   private:
